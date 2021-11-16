@@ -83,7 +83,6 @@ function fireStoreUpload(text,key) {
 async function fireStoreDownload(keyx) {
     const querySnapshot = await getDocs(collection(db, "col"));
 querySnapshot.forEach((doc) => {
-    console.log(doc.id,keyx);
     if (doc.id === keyx) {
         console.log("Found data in firestore");
         let data = doc.data().text;
